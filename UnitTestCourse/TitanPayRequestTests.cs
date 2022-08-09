@@ -1,7 +1,4 @@
-﻿using System;
-using SystemUnderTest;
-using FluentAssertions;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace UnitTestCourse
 {

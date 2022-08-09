@@ -2,8 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace SystemUnderTest
 {
@@ -20,7 +18,7 @@ namespace SystemUnderTest
 
     public class TitanPayRequest
     {
-        public string MerchantCode => "pchome";
+        private string MerchantCode => "pchome";
         public int Amount { get; set; }
         public string Signature { get; private set; }
         public DateTime CreatedOn { get; private set; }
@@ -35,7 +33,7 @@ namespace SystemUnderTest
 
         public void Sign2()
         {
-            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Data\key.txt");
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? string.Empty, @"Data\key.txt");
             var merchantKey = File.ReadLines(path).First();
             var beforeHash = $"{MerchantCode}{Amount:n0}{merchantKey}";
 
