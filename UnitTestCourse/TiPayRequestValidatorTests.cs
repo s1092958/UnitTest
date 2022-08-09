@@ -5,7 +5,7 @@ namespace UnitTestCourse
     [TestFixture]
     public class TiPayRequestValidatorTests
     {
-        // 5. write unit tests for TiPayRequestValidator
+        // 2. write unit tests for TiPayRequestValidator
         [Test]
         public void name_your_unit_tests()
         {
